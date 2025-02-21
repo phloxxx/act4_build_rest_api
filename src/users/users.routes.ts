@@ -49,7 +49,7 @@ userRouter.post("/register", async (req : Request, res : Response) => {
 
         const newUser = await database.create(req.body)
 
-        return res.status(StatusCodes.CREATED).json(newUser)
+        return res.status(StatusCodes.CREATED).json({newUser})
 
     } catch (error) {
         return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({error})

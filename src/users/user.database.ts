@@ -1,6 +1,6 @@
-import { User, UnitUser, Users } from './user.interface'
-import bcrypt from 'bcryptjs'
-import { v4 as random } from 'uuid'
+import { User, UnitUser, Users } from "./user.interface"
+import bcrypt from "bcryptjs"
+import { v4 as random } from "uuid"
 import fs from "fs"
 
 let users: Users = loadUsers()
@@ -119,6 +119,4 @@ export const remove = async (id: string): Promise<null | void> => {
     delete users[id];
 
     saveUsers()
-
-    return
 }

@@ -42,7 +42,7 @@ productRouter.post("/product", async (req : Request, res : Response) => {
         }
 
         const newProduct = await database.create(req.body)
-        return res.status(StatusCodes.CREATED).json(newProduct)
+        return res.status(StatusCodes.CREATED).json({newProduct})
     } catch (error) {
         return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({error})
     }
